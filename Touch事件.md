@@ -92,3 +92,24 @@ __响应者对象：__有响应和处理事件能力的对象；具体来说就�
 3. UITouch和UIEvent两个对象会被传递到UIApplication管理的一个事件队列中，UIApplication会取出最前的事件（先后），将事件传递到UIWindow。窗口再在视图层找合适的视图来处理。
 
 4. 说蠢是因为hittest是view的方法，ViewController是控制器没有该方法的声明。
+
+---
+
+哇~ 不试不知道一试吓一跳，前面说的“如果子视图的hidden = yes ，userInteractionEnabled = NO或alpha小于0.1都会令hitTest:withEvent返回nil”，理解错了我，还以为是就不执行了呢，傻逼了。
+
+__还有__
+
+__真正要注意的是__
+
+那个alpha是小于等于0.01才会令hitTest:withEvent返回空
+
+~~~
+B:RFGBSubView View:(null)
+~~~
+
+正常：
+
+~~~
+B:RFGBSubView View:<RFGBSubView: 0x7fedea5143a0; frame = (20 20; 374 328); layer = <CALayer: 0x61800002dde0>>
+~~~
+

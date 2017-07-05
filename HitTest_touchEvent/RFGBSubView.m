@@ -22,6 +22,9 @@
         [self addSubview:firstD];
         [self addSubview:secondE];
         self.backgroundColor = [UIColor greenColor];
+//        self.hidden = YES;
+//        self.userInteractionEnabled = NO;
+//        self.alpha = 0.009;
     }
     return self;
 }
@@ -37,7 +40,7 @@
         NSLog(@"point not in");
         //            return nil;
     }
-    NSLog(@"B:%@", [self class]);
+    NSLog(@"B:%@ View:%@", [self class], [super hitTest:point withEvent:event]);
 
     return [super hitTest:point withEvent:event];
 }
