@@ -16,7 +16,7 @@
     
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor orangeColor];
-
+//        self.userInteractionEnabled = NO
     }
     return self;
 }
